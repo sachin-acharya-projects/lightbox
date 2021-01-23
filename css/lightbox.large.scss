@@ -1,0 +1,97 @@
+$allan: 'Allan', cursive;
+$anton: 'Anton', sans-serif;
+$bebas: 'Bebas Neue', cursive;
+$courgette: 'Courgette', cursive;
+$inbue: 'Imbue', serif;
+$kaushan: 'Kaushan Script', cursive;
+$lobster: 'Lobster', cursive;
+$nove: 'Nova Square', cursive;
+$oswald: 'Oswald', sans-serif;
+$pathway: 'Pathway Gothic One', sans-serif;
+$poppins: 'Poppins', sans-serif;
+$potta: 'Potta One', cursive;
+$pt: 'PT Sans Narrow', sans-serif;
+$righteous: 'Righteous', cursive;
+$roboto: 'Roboto', sans-serif;
+$squada: 'Squada One', cursive;
+$teko: 'Teko', sans-serif;
+$trade: 'Trade Winds', cursive;
+$yenone: 'Yanone Kaffeesatz', sans-serif;
+$yellow: 'Yellowtail', cursive;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+}
+.oneAtATime{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        height: 300px;
+        margin: 10px;
+        -webkit-box-reflect: below 10px linear-gradient(transparent ,rgba(#000, 0.1));
+    }
+}
+
+img[data-single], img[data-multiple]{
+    cursor: pointer;
+}
+
+.lightbox_dim{
+    display: block;
+    background: rgba(#000, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.3s all linear;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    &.lightbox_dim_open{
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.lightbox_preview{
+    background: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all linear;
+    transition-delay: 0.3s;
+    height: 0;
+    width: 0;
+
+    &.lightbox_preview_open{
+        width: fit-content;
+        height: 80vh;
+    }
+    img{
+        max-height: 100%;
+        max-width: 100%;
+        cursor: pointer;
+    }
+}
